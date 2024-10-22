@@ -9,7 +9,7 @@
     --gray-800: #202024;
     --gray-900: #121214;
 
-    --gren-500: #00875f;
+    --green-500: #00875f;
 }
 
 *{
@@ -29,4 +29,3 @@ body, input, select, button {
     font-weight: 400;
     font-size: 1rem;
 }
-
