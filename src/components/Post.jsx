@@ -3,9 +3,18 @@ import ptBR from 'date-fns/locale/pt-BR';
 import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 import styles from './Post.module.css';
-import { LineSegment } from 'phosphor-react';
+import { useState } from 'react';
+
 
 export function Post ( { author, publishedAt, content } ) {
+//Nescessario usar o estado do ract para atualizar com o novo comentario
+//Estado = Variáveis que eu quero que o componente monitore
+//Já que o useState retorno também um aray e uma função foi usado o conceito de desestruturação 
+    const [comments, setComments] = useState ([
+        1,
+        2,
+    ])
+
     const publishedDateFromatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
         locale: ptBR,
     })
@@ -14,6 +23,13 @@ export function Post ( { author, publishedAt, content } ) {
         locale: ptBR, 
         addSuffix: true,
     })
+
+    function handleCreateNewComment(){
+        event.preventDefault()
+//Foi passado agora pra dentro dessa função qual é o novo valor do estado de comentarios ou sejá eu não passo só oque eu quero
+//eu passo um novo valor, isso é imutabilidade         
+        setComments([...comments, comments.length + 1]);
+    }
 
     return (
         <article className={styles.post}>
@@ -36,7 +52,7 @@ export function Post ( { author, publishedAt, content } ) {
                     }
                 })}
             </div>
-            <form className={styles.commetForm}>
+            <form onSubmit={handleCreateNewComment} className={styles.commetForm}>
                 <strong>Deixe seu feedback</strong>
                 <textarea placeholder="Deixe seu comentário"/>
                 <footer>
@@ -44,9 +60,9 @@ export function Post ( { author, publishedAt, content } ) {
                 </footer>
             </form>
             <div className={styles.commentList}>
-            <Comment />
-            <Comment />
-            <Comment />
+                {comments.map(comment => {
+                    return <Comment />
+                })}
             </div>
         </article>
     )
