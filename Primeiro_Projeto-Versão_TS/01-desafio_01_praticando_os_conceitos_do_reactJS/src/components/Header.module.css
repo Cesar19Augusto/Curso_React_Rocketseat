@@ -1,0 +1,60 @@
+.header {
+    background: var(--gray-700);
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    padding: 1.25rem 0;
+}
+
+.header img {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 3rem;
+    display: flex;
+    margin: auto;
+}
+
+.addingTask {
+    width: 100%;
+    display: flex; /* Ativa o flexbox */
+    align-items: center; /* Alinha os itens no centro horizontalmente */
+    justify-content: center; /* Centraliza no eixo vertical */
+    margin: 0; /* Remove margens extras, se houver */
+
+}
+.addingTask textarea {
+    width: 40rem;
+    height: 2.5rem;
+    border-color: var(--gray-700);
+    border-radius: 5px;
+    resize: none;
+    background: var(--gray-500);
+    color: var(--gray-300);
+    display: flex;
+    font-size: 1rem;
+}
+
+
+
+.addingTask footer button {
+    margin: 0.5rem;
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    border: none; 
+    cursor: pointer;
+    background: var(--blue-dark);
+    color: var(--gray-100);
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 11%;
+} 
+
+.addingTask footer button:hover {
+    background: var(--blue);
+}
+
+.plusCircle {
+    display: flex;
+    padding: 0 0 0 5px;
+}
