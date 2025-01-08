@@ -1,17 +1,14 @@
 .header {
+    width: 100%;
+    height: 12.5rem;
     background: var(--gray-700);
-    display: flex;
-    justify-content: center;
-    height: 5rem;
-    padding: 1.25rem 0;
 }
 
-.header img {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+.header img {   
     height: 3rem;
     display: flex;
     margin: auto;
+    padding-top: 4rem;
 }
 
 .addingTask {
@@ -19,12 +16,12 @@
     display: flex; /* Ativa o flexbox */
     align-items: center; /* Alinha os itens no centro horizontalmente */
     justify-content: center; /* Centraliza no eixo vertical */
-    margin: 0; /* Remove margens extras, se houver */
+    margin: 3.5rem; /* Remove margens extras, se houver */
 
 }
 .addingTask textarea {
-    width: 40rem;
-    height: 2.5rem;
+    width: 46rem;
+    height: 3.375rem;
     border-color: var(--gray-700);
     border-radius: 5px;
     resize: none;
@@ -39,7 +36,7 @@
 .addingTask footer button {
     margin: 0.5rem;
     width: 5rem;
-    height: 2.5rem;
+    height: 3.375rem;
     border-radius: 5px;
     border: none; 
     cursor: pointer;

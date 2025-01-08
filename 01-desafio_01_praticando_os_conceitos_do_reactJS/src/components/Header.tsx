@@ -26,7 +26,7 @@ export function Header() {
         // Esta função pode ser implementada para tratar erros de validação do campo
     }
 
-    // JSX que define a estrutura visual do componente
+    // TSX que define a estrutura visual do componente
     return (
         <>
             <header className={style.header}>  {/* O cabeçalho com o logo e formulário */}
