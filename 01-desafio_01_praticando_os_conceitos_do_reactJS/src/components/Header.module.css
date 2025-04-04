@@ -19,7 +19,7 @@
     margin: 3.5rem; /* Remove margens extras, se houver */
 
 }
-.addingTask textarea {
+.addingTask input {
     width: 46rem;
     height: 3.375rem;
     border-color: var(--gray-700);

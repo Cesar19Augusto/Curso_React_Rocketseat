@@ -1,7 +1,16 @@
 .TaskBar{
+    width: 50%;
     color: var(--gray-100);
     margin-top: 4rem;
-    margin-bottom: 24px;
-    margin-left: 37rem;
-    
+    margin-left: 26.5%;
+}
+
+.strong1 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.strong2 {
+    display: flex;
+    justify-content: flex-end;
 }

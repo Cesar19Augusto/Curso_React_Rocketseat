@@ -1,31 +1,59 @@
 import { Header } from './components/Header';
 import { Task } from './components/Task';
 import { TaskBar } from './components/TaskBar';
-import './App.css';
+import './App.module.css';
 import './global.css';
 import { useState } from 'react';
 
 function App() {
+  const [todos, setTodos] = useState([
+    {            // Dados exemplo
+      id: 1,
+      text: "Criar funcionalidade X no sistema",
+      isCompleted: false,
+    },
+    {
+      id: 2,
+      text: "Ir para a academia",
+      isCompleted: false,
+    },
+    {
+      id: 3,
+      text: "Estudar React",
+      isCompleted: false,
+    },
+  ])
 
-  const [taskList, setTaskList] = useState<string[]>([]);
-    function handleDeleteTask (taskContent:string):void {
-      const newTaskList = taskList.filter(task=>{ /*task= A variavél que será utilizada para receber o valor de cada item do tasklist*/ 
-        return task !== taskContent;
-      })
-      setTaskList(newTaskList);/*Define o valor do estado*/
-    }
+  const addTodo = (text: string) => {
+    const newTodos = [...todos, {
+      id: Math.floor(Math.random() *10000),
+      text,
+      isCompleted:false,
+    }]
+    setTodos(newTodos)
+  }
 
+  const removeTodo = (id: number) => {
+    const newTodos = [...todos]
+    const filteredTodos = newTodos.filter(todo => todo.id !== id ? todo: null)
+    setTodos(filteredTodos)
+  }
+
+  const completeTodo = (id: number) => {
+    setTodos(todos.map(todo => todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo))
+  }
+
+  const allTodo = todos.length;
+  const allCompleted = todos.filter(todo=> todo.isCompleted).length;
+  
   return (
     <div>
-      {/*Precisa da header*/}
-      {/*Precisa da addingTask que esta dentro da header*/}
-      <Header />
-      <main>
-        <TaskBar />
-        {taskList.map(task => {
-          return (<Task content={task} onDeleteTask={handleDeleteTask}/>)
-        })
-        }
+      <Header addTodo={addTodo} />
+      <main> 
+        <TaskBar allTodo={allTodo} allCompleted={allCompleted}/>
+        <div>
+        {todos.map((todo) => (<Task key= {todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo}/>))}
+        </div>
       </main>
     </div>
   )

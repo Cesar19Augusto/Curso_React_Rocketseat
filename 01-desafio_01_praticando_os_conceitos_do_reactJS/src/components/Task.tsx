@@ -2,22 +2,22 @@ import style from '../components/Task.module.css'
 import { Trash } from '@phosphor-icons/react';
 
 interface TaskProps {
-    content: string;
-    onDeleteTask: (taskContent: string) => void;
+  todo: {
+    id: number;
+    text: string;
+    isCompleted: boolean;
   }
-  
-  export function Task({ content, onDeleteTask }: TaskProps) {
-    function deleteTask() {
-      onDeleteTask(content);
-    }
+  removeTodo: (id: number) => void;
+  completeTodo:(id:number) => void;
+}
 
-    return (
-        <div className={style.taskTodo}>
-            <input type="checkbox"/>
-            <strong>Tarefa colocada</strong>
-            <button onClick={deleteTask} title="Deletar comentário"> 
-                <Trash size={24} />
-            </button>
-        </div>
-    );
+export function Task({ todo, removeTodo, completeTodo }: TaskProps) {
+
+  return (
+    <div className={style.taskTodo}>
+      <input type="checkbox" checked={todo.isCompleted} onChange={() => completeTodo(todo.id)}/>
+      <strong style={{ textDecoration: todo.isCompleted ? "line-through" : "none"}}>{todo.text}</strong>
+      <button onClick={() => removeTodo(todo.id)}> <Trash size={24} /> </button>
+    </div>
+  );
 }
