@@ -4,8 +4,7 @@
     background: var(--gray-700);
 }
 
-.header img {   
-    height: 3rem;
+.header img {
     display: flex;
     margin: auto;
     padding-top: 4rem;
@@ -13,25 +12,28 @@
 
 .addingTask {
     width: 100%;
-    display: flex; /* Ativa o flexbox */
-    align-items: center; /* Alinha os itens no centro horizontalmente */
-    justify-content: center; /* Centraliza no eixo vertical */
-    margin: 3.5rem; /* Remove margens extras, se houver */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 3.5rem; 
 
 }
 .addingTask input {
+    display: flex;
     width: 46rem;
     height: 3.375rem;
-    border-color: var(--gray-700);
+    border: 1px solid transparent;
     border-radius: 5px;
-    resize: none;
+    padding: 10px;
     background: var(--gray-500);
     color: var(--gray-300);
-    display: flex;
     font-size: 1rem;
 }
 
-
+.addingTask input:focus{
+    border-color: var(--purple-dark);
+    outline: none; 
+}
 
 .addingTask footer button {
     margin: 0.5rem;

@@ -1,7 +1,6 @@
 import { Header } from './components/Header';
 import { Task } from './components/Task';
 import { TaskBar } from './components/TaskBar';
-import './App.module.css';
 import './global.css';
 import { useState } from 'react';
 
@@ -26,16 +25,16 @@ function App() {
 
   const addTodo = (text: string) => {
     const newTodos = [...todos, {
-      id: Math.floor(Math.random() *10000),
+      id: Math.floor(Math.random() * 10000),
       text,
-      isCompleted:false,
+      isCompleted: false,
     }]
     setTodos(newTodos)
   }
 
   const removeTodo = (id: number) => {
     const newTodos = [...todos]
-    const filteredTodos = newTodos.filter(todo => todo.id !== id ? todo: null)
+    const filteredTodos = newTodos.filter(todo => todo.id !== id ? todo : null)
     setTodos(filteredTodos)
   }
 
@@ -44,15 +43,30 @@ function App() {
   }
 
   const allTodo = todos.length;
-  const allCompleted = todos.filter(todo=> todo.isCompleted).length;
-  
+  const allCompleted = todos.filter(todo => todo.isCompleted).length;
+
   return (
     <div>
       <Header addTodo={addTodo} />
-      <main> 
-        <TaskBar allTodo={allTodo} allCompleted={allCompleted}/>
+      <main>
+        <TaskBar allTodo={allTodo} allCompleted={allCompleted} />
         <div>
-        {todos.map((todo) => (<Task key= {todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo}/>))}
+          {todos.length === 0 ? (
+            <section className="emptyState">
+              <img src="src\assets\Clipboard.svg" alt="" className='imgNone'/>
+              <p><strong>Você ainda não tem tarefas cadastradas</strong></p>
+              <p>Crie tarefas e organize seus itens a fazer</p>
+            </section>
+          ) : (
+            todos.map((todo) => (
+              <Task
+                key={todo.id}
+                todo={todo}
+                removeTodo={removeTodo}
+                completeTodo={completeTodo}
+              />
+            ))
+          )}
         </div>
       </main>
     </div>

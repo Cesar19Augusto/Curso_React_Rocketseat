@@ -1,33 +1,91 @@
 .taskTodo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50.5rem;
-    margin-top: 12px;
-    margin-left: 31%;
-    padding: 0.625rem;
-    border: 1px solid var(--gray-400);
-    border-radius: 8px;
-}
-.taskTodo input {
-    margin-right: 3%;
-}
-
-.taskTodo > strong {
-    color: var(--gray-100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 46rem;
+  width: 100%;
+  margin: 12px auto 0;
+  padding: 0.625rem;
+  background-color: var(--gray-400);
+  border-radius: 8px;
+  gap: 15px;
+  box-sizing: border-box;
+  word-break: break-word;
 }
 
-.taskTodo > button {
-    background: transparent;
-    border: 0;
-    color: var(--gray-400); 
-    cursor: pointer;
-    line-height: 0;
-    border-radius: 2px;
-    display: flex;
-    align-items: end;
+.checkboxContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
 }
 
-.taskTodo button:hover {
-    color: var(--danger);
+.checkboxContainer input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.customCheckbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.checkboxContainer:hover input:not(:checked)+.customCheckbox {
+  border-color: #00bfff;
+}
+
+.checkboxContainer input:checked+.customCheckbox {
+  background-color: var(--purple);
+  border-color: var(--purple);
+}
+
+.customCheckbox::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkboxContainer input:checked+.customCheckbox::after {
+  content: "✓";
+  color: white;
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -58%);
+  display: block;
+}
+
+.checkboxContainer:hover input:checked+.customCheckbox {
+  background-color: #9b5de5;
+  border-color: #9b5de5;
+}
+
+
+.taskTodo>strong {
+  font-weight: normal;
+  color: var(--gray-100);
+}
+
+.taskTodo>.buttonTrash button {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: 0;
+  color: var(--gray-300);
+  cursor: pointer;
+  line-height: 0;
+  border-radius: 2px;
+}
+
+.taskTodo>.buttonTrash button:hover {
+  color: var(--danger);
 }

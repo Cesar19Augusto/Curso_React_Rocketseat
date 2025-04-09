@@ -1,16 +1,46 @@
 .TaskBar{
-    width: 50%;
+    display: flex;
+    justify-content: space-between;
     color: var(--gray-100);
     margin-top: 4rem;
-    margin-left: 26.5%;
+    max-width: 46rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+}
+.strong1 {
+    gap: 6px;
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1;
 }
 
-.strong1 {
-    display: flex;
-    justify-content: flex-start;
+.strong1 span {
+    background-color: var(--gray-400); 
+    color: var(--gray-200);            
+    border-radius: 999px;              
+    padding: 2px 8px;                  
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
 }
+
 
 .strong2 {
-    display: flex;
-    justify-content: flex-end;
+    gap: 6px;
+    color: var(--purple);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.strong2 span {
+    background-color: var(--gray-400); 
+    color: var(--gray-200);            
+    border-radius: 999px;              
+    padding: 2px 8px;                  
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
 }

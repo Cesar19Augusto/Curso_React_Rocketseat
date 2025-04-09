@@ -8,16 +8,25 @@ interface TaskProps {
     isCompleted: boolean;
   }
   removeTodo: (id: number) => void;
-  completeTodo:(id:number) => void;
+  completeTodo: (id: number) => void;
 }
 
 export function Task({ todo, removeTodo, completeTodo }: TaskProps) {
 
   return (
     <div className={style.taskTodo}>
-      <input type="checkbox" checked={todo.isCompleted} onChange={() => completeTodo(todo.id)}/>
-      <strong style={{ textDecoration: todo.isCompleted ? "line-through" : "none"}}>{todo.text}</strong>
-      <button onClick={() => removeTodo(todo.id)}> <Trash size={24} /> </button>
+      <label className={style.checkboxContainer}>
+        <input
+          type="checkbox"
+          checked={todo.isCompleted}
+          onClick={() => completeTodo(todo.id)}
+        />
+        <span className={style.customCheckbox}></span>
+      </label>
+      <strong style={{ textDecoration: todo.isCompleted ? "line-through" : "none" }}>{todo.text}</strong>
+      <div className={style.buttonTrash}>
+        <button onClick={() => removeTodo(todo.id)}> <Trash size={16} /> </button>
+      </div>
     </div>
   );
 }

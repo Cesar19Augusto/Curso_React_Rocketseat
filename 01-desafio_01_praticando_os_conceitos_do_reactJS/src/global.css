@@ -14,16 +14,41 @@
 
     --danger: #E25858;
 }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     background: var(--gray-600);
     color: var(--gray-300);
+    overflow-x: hidden;
 }
 
 
 /*set da font padrão para essas tags*/
-body, input, select, button {
+body, input, select, button,strong {
     font-family: 'roboto', sans-serif;
     font-weight: bold;
     font-size: 1rem;
+}
+
+.emptyState{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 64px;
+}
+
+.emptyState img{
+    margin-bottom: 0.5rem;
+}
+
+.emptyState p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: normal;
 }
