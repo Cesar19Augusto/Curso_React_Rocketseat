@@ -6,17 +6,17 @@
 
 
 <h1 align="center" style="font-weight: bold;">Curso_React_Rocketseat 💻</h1>
-[HTML5__BADGE]
-[CSS3__BADGE]
-[JAVASCRIPT__BADGE]
-[TYPESCRIPT__BADGE]
-[REACT__BADGE]
+
+![HTML5][HTML5__BADGE]
+![CSS3][CSS3__BADGE]
+![javascript][JAVASCRIPT__BADGE]
+![typescript][TYPESCRIPT__BADGE]
+![react][REACT__BADGE]
 
 <p align="center">
  <a href="#tech">Technologies</a> • 
  <a href="#started">Getting Started</a> • 
-  <a href="#colab">Collaborators</a> •
- <a href="#contribute">Contribute</a>
+ <a href="#colab">Collaborators</a> •
 </p>
 
 <p align="center">
