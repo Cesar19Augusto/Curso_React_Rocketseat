@@ -6,11 +6,11 @@
 
 
 <h1 align="center" style="font-weight: bold;">Curso_React_Rocketseat 💻</h1>
-![HTML5][HTML5__BADGE]
-![CSS3][CSS3__BADGE]
-![javascript][JAVASCRIPT__BADGE]
-![typescript][TYPESCRIPT__BADGE]
-![react][REACT__BADGE]
+[HTML5__BADGE]
+[CSS3__BADGE]
+[JAVASCRIPT__BADGE]
+[TYPESCRIPT__BADGE]
+[REACT__BADGE]
 
 <p align="center">
  <a href="#tech">Technologies</a> • 
@@ -45,7 +45,7 @@
 
 <h2 id="started">🚀 Getting started</h2>
 
-This project uses React so to run it is necessary after GitClone to run the initialization command
+This project uses React, so to run it you need to run the initialization command after cloning.
 
 <h3>Cloning</h3>
 
@@ -71,8 +71,8 @@ People who contributed to the construction of this project
 <table>
   <tr>
     <td align="center">
-      <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/79229452?s=400&u=76bc95ac47e156acc7c339a7c3f981211c259df5&v=4" width="100px;" alt="Cesar Augusto Profile Picture"/><br>
+      <a href="https://www.linkedin.com/in/cesaraugusto875/">
+        <img src="https://avatars.githubusercontent.com/u/79229452?s=400&u=76bc95ac47e156acc7c339a7c3f981211c259df5&v=4;" width="100px;" alt="Cesar Augusto Profile Picture"/><br>
         <sub>
           <b>Cesar Augusto</b>
         </sub>
